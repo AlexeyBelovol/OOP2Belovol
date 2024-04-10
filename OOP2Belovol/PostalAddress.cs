@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,20 +14,30 @@ namespace OOP2Belovol
         private string postalCode;
         private string country;
 
-        public PostalAddress()
+        public string Street
         {
-            street = "";
-            city = "";
-            postalCode = "";
-            country = "";
+            get { return street; }
+            set { street = value; }
         }
-        public void SetAddress(string street, string city, string postalCode, string country)
+
+        public string City
         {
-            this.street = street;
-            this.city = city;
-            this.postalCode = postalCode;
-            this.country = country;
+            get { return city; }
+            set { city = value; }
         }
+
+        public string PostalCode
+        {
+            get { return postalCode; }
+            set { postalCode = value; }
+        }
+
+        public string Country
+        {
+            get { return country; }
+            set { country = value; }
+        }
+
         public void ClearAddress()
         {
             street = "";
@@ -60,5 +71,5 @@ namespace OOP2Belovol
             return $"{street}, {city}, {postalCode}, {country}";
         }
     }
-
 }
+

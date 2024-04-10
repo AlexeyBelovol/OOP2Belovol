@@ -1,3 +1,6 @@
+using System;
+using System.Windows.Forms;
+
 namespace OOP2Belovol
 {
     public partial class Form1 : Form
@@ -9,6 +12,7 @@ namespace OOP2Belovol
             InitializeComponent();
             postalAddress = new PostalAddress();
         }
+
         private void UpdateLabelResult()
         {
             labelResult.Text = postalAddress.ToString();
@@ -16,12 +20,11 @@ namespace OOP2Belovol
 
         private void buttonSetAddress_Click(object sender, EventArgs e)
         {
-            string street = textBoxStreet.Text;
-            string city = textBoxCity.Text;
-            string postalCode = textBoxPostalCode.Text;
-            string country = textBoxCountry.Text;
+            postalAddress.Street = textBoxStreet.Text;
+            postalAddress.City = textBoxCity.Text;
+            postalAddress.PostalCode = textBoxPostalCode.Text;
+            postalAddress.Country = textBoxCountry.Text;
 
-            postalAddress.SetAddress(street, city, postalCode, country);
             UpdateLabelResult(); // Оновити лейбл після встановлення адреси
         }
 
